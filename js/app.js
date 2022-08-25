@@ -23,7 +23,10 @@
  * 
  */
 const sections = Array.from(document.querySelectorAll('section')); // get all the sections in the document
-const navbar = document.querySelector('.navbar__menu'); // get the navbar
+const navbar = document.querySelector('.navbar__menu'); // get the navbar  
+const menu = document.createElement('li'); // create a li element
+const id = section.getAttribute('id'); // get the id of the section
+const name = section.getAttribute('data-nav'); // get the name of the section
 /**
  * End Global Variables
  * Start Helper Functions
@@ -42,9 +45,6 @@ const navbar = document.querySelector('.navbar__menu'); // get the navbar
 // build the nav
 function buildNav() {
     sections.forEach(section => { // for each section in the document
-        const menu = document.createElement('li'); // create a li element
-        const id = section.getAttribute('id'); // get the id of the section
-        const name = section.getAttribute('data-nav'); // get the name of the section
         menu.innerHTML = `<a class="menu__link navbar__menu" href="#${id}">${name}</a>`; // set the innerHTML of the li element to the id of the section
         navbar.appendChild(menu); // append the li element to the navbar
 
