@@ -58,11 +58,9 @@ function activeSection() {
         const rect = section.getBoundingClientRect(); // get the bounding rectangle of the section
         if (rect.top <= 150 && rect.bottom >= 150) { // if the section is in the viewport
             section.classList.add('your-active-class'); // add the class 'active' to the section
-            section.style.cssText = `border: 10px solid white;`; // add a border to the section
             navbar.querySelector(`a[href="#${id}"]`).style.cssText = ' color:white; background-color: black;'; // add the style to the navbar
         } else {
             section.classList.remove('your-active-class'); // remove the class 'active' from the section
-            section.style.cssText = ``; // remove the style from the section
             navbar.querySelector(`a[href="#${id}"]`).style.cssText = ''; // remove the style from the navbar
         }
     });
